@@ -1,3 +1,15 @@
-.category_of_booking{
+
+body h1{
+  font-size: 24px;
+}
+
+
+.category_of_booking_flight{
+  background-color: aqua;
+}
+.category_of_booking_bus{
+  background-color: aqua;
+}
+.category_of_booking_train{
   background-color: aqua;
 }
