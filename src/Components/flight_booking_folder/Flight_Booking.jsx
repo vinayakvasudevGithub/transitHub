@@ -1,5 +1,6 @@
 import React from 'react'
-import Special_Fare from './Special_Fare'
+import Special_Fare from './special_fare_folder/Special_Fare'
+
 
 const Flight_Booking = () => {
   return (
@@ -34,7 +35,8 @@ const Flight_Booking = () => {
                   <p>Economy/Premium Economy</p>
             </div>
       </div>
-      <Special_Fare />
+      <Special_Fare/>
+      
       </>
   )
 }

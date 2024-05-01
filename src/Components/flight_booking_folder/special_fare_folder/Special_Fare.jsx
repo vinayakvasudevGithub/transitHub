@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Special_Fare = () => {
   return (
     <div className='bg-green-300 my-3 flex justify-center space-x-4'>      
