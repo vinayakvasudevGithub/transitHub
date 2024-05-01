@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Train_Booking = () => {
+
+    const [show,setshow]=useState(false)
+    const to_display_inputbox=()=>{
+        console.log('car')
+    }
+
   return (
+
+    <>
     <div className='bg-red-300 flex justify-center space-x-2'>
-        <div className='category_of_booking_train'>
+        <div onClick={()=>to_display_inputbox()} className='category_of_booking_train'>
             <h3>from</h3>
             <h1>Delhi</h1>
             <h3>India</h3>
@@ -24,6 +32,12 @@ const Train_Booking = () => {
             <h3>All class</h3>
         </div>
     </div>
+        <div className='flex justify-center'>
+            <button className='bg-blue-500 py-2 px-4 hover:bg-blue-700 font-bold text-white'>SEARCH</button> 
+        </div>
+
+
+    </>
   )
 }
 

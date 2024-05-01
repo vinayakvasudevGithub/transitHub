@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import {Routes,Route,Link} from 'react-router-dom'
 import Flight_Booking from './flight_booking_folder/Flight_Booking'
 import Bus_Booking from './bus_booking_folder/Bus_Booking'
-// import Flight_Booking from './flight_booking_folder/Flight_Booking'
 import Train_Booking from './train_booking_folder/Train_Booking'
 
 const Booking_Pages_Together = () => {
@@ -32,7 +31,7 @@ const Booking_Pages_Together = () => {
             
             <br/>
         <Routes>
-            <Route path='/' element={<Flight_Booking/>} />
+            <Route path='/' element={<Bus_Booking/>} />
             <Route path='flight' element={<Flight_Booking/>} />
             <Route path='bus' element={<Bus_Booking />} />
             <Route path='train' element={<Train_Booking />} />
