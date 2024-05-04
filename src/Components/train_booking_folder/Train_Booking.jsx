@@ -13,23 +13,17 @@ const Train_Booking = () => {
 
   const press_enter_key = (e) => {
     const save = e.target.value;
-    show === "from" && set_from(save);
-    show === "to" && set_to(save);
-    show === "date" && set_date(save);
-    show === "class" && set_coach(save);
+    if (e.key === "Enter") {
+      show === "from" && set_from(save);
+      show === "to" && set_to(save);
+      show === "date" && set_date(save);
+      show === "class" && set_coach(save);
 
-    // if (show === "from") {
-    //   set_from(save);
-    // } else if (show === "to") {
-    //   set_to(save);
-    // } else if (show === "date") {
-    //   set_date(save);
-    // } else if (show === "class") {
-    //   set_coach(save);
-    // }
-
-    e.key === "Enter" && setshow(false);
+      e.key === "Enter" && setshow(false);
+    }
   };
+
+  console.log(to);
 
   return (
     <>

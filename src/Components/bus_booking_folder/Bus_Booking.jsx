@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Bus_data from "./bus_data/Bus_booking_data";
 
 const Bus_Booking = () => {
   const [show, setshow] = useState(false);
@@ -18,6 +19,11 @@ const Bus_Booking = () => {
 
     e.key === "Enter" && setshow(false);
   };
+
+  for (let i = 0; i < Bus_data.length; i++) {
+    console.log(from);
+    from === Bus_data[i].name && console.log("car");
+  }
 
   return (
     <>
