@@ -35,7 +35,7 @@ const Flight_Booking = () => {
               <input
                 onKeyDown={press_enter_key}
                 type="text"
-                className="border border-gray-300"
+                className="border border-gray-500"
               />
             </div>
           ) : (
