@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Special_Fare from "./special_fare_folder/Special_Fare";
 
 const Flight_Booking = () => {
   const [show, setshow] = useState(false);
+
   const to_display_inputbox = (click) => {
     setshow(click);
   };
@@ -23,8 +25,16 @@ const Flight_Booking = () => {
     e.key === "Enter" && setshow(false);
   };
 
+  // const [users, setusers] = useState([]);
+  const submit = () => {
+    axios.get("http://localhost:5000/api/booking/flight").then((result) => {
+      console.log(result.data);
+    });
+  };
+
   return (
     <>
+      <button onClick={submit}>sub</button>
       <div className="bg-red-300 flex justify-center space-x-2">
         <div
           onClick={() => to_display_inputbox("from")}
