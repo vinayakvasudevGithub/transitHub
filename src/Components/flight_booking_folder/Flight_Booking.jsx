@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Special_Fare from "./special_fare_folder/Special_Fare";
+import { Link, useNavigate } from "react-router-dom";
 
 const Flight_Booking = () => {
   const [show, setshow] = useState(false);
+  const navigate = useNavigate();
 
   const to_display_inputbox = (click) => {
     setshow(click);
@@ -27,14 +29,14 @@ const Flight_Booking = () => {
 
   // const [users, setusers] = useState([]);
   const submit = () => {
-    axios.get("http://localhost:5000/api/booking/flight").then((result) => {
-      console.log(result.data);
-    });
+    // axios.get("http://localhost:5000/flight").then((result) => {
+    // });
+
+    navigate("/result/");
   };
 
   return (
     <>
-      <button onClick={submit}>sub</button>
       <div className="bg-red-300 flex justify-center space-x-2">
         <div
           onClick={() => to_display_inputbox("from")}
@@ -146,7 +148,10 @@ const Flight_Booking = () => {
       </div>
       <Special_Fare />
       <div className="flex justify-center">
-        <button className="bg-blue-500 py-2 px-4 hover:bg-blue-700 font-bold text-white">
+        <button
+          onClick={submit}
+          className="bg-blue-500 py-2 px-4 hover:bg-blue-700 font-bold text-white"
+        >
           SEARCH
         </button>
       </div>

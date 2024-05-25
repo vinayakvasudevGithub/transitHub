@@ -35,7 +35,8 @@ const Booking_Pages_Together = () => {
         <Route path="/" element={<Flight_Booking />} />
         <Route path="flight" element={<Flight_Booking />} />
         <Route path="bus" element={<Bus_Booking />} />
-        <Route path="train" element={<Train_Booking />} />
+        <Route path="train" element={<Train_Booking />} /> */
+        <Route path="result" element={<flight_results />} />
       </Routes>
     </>
   );

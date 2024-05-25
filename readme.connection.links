@@ -1,0 +1,20 @@
+-------------- train
+train get = http://localhost:5000/api/train
+train get by id = http://localhost:5000/api/train/:id
+train data create = http://localhost:5000/api/train/create
+train data update = http://localhost:5000/api/train/update/:id
+train data delete = http://localhost:5000/api/train/delete/:id
+
+-------------- bus
+bus get = http://localhost:5000/api/bus
+bus get by id = http://localhost:5000/api/bus/:id
+bus data create = http://localhost:5000/api/bus/create
+bus data update = http://localhost:5000/api/bus/update/:id
+bus data delete = http://localhost:5000/api/bus/delete/:id
+
+-------------- flight
+flight get = http://localhost:5000/api/flight
+flight get by id = http://localhost:5000/api/flight/:id
+flight data create = http://localhost:5000/api/flight/create
+flight data update = http://localhost:5000/api/flight/update/:id
+flight data delete = http://localhost:5000/api/flight/delete/:id
