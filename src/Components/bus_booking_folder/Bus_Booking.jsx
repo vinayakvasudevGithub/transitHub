@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Bus_data from "./bus_data/Bus_booking_data";
+import { useNavigate } from "react-router-dom";
 
 const Bus_Booking = () => {
   const [show, setshow] = useState(false);
+  const navigate = useNavigate();
 
   const to_show_inputbox = (click) => {
     setshow(click);
@@ -24,6 +26,10 @@ const Bus_Booking = () => {
     console.log(from);
     from === Bus_data[i].name && console.log("car");
   }
+
+  const submit = () => {
+    navigate("/result/busdetails");
+  };
 
   return (
     <>
@@ -91,7 +97,10 @@ const Bus_Booking = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="bg-blue-500 py-2 px-4 hover:bg-blue-700 font-bold text-white">
+        <button
+          onClick={submit}
+          className="bg-blue-500 py-2 px-4 hover:bg-blue-700 font-bold text-white"
+        >
           SEARCH
         </button>
       </div>

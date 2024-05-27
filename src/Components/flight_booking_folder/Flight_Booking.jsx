@@ -32,7 +32,7 @@ const Flight_Booking = () => {
     // axios.get("http://localhost:5000/flight").then((result) => {
     // });
 
-    navigate("/result/");
+    navigate("/result/flightdetails");
   };
 
   return (
