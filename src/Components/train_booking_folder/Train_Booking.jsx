@@ -23,8 +23,6 @@ const Train_Booking = () => {
     }
   };
 
-  console.log(to);
-
   return (
     <>
       <div className="bg-red-300 flex justify-center space-x-2">

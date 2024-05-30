@@ -6,7 +6,8 @@ const Bus_Result = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/bus/")
+      // .get("http://localhost:5000/bus")
+      .get("http://localhost:5000/bus")
       .then((response) => {
         setResult(response.data); // Assuming response.data is the array as provided
       })

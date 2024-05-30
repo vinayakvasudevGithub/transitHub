@@ -27,7 +27,7 @@ const Bus_Booking = () => {
   // }
 
   const submit = () => {
-    navigate("/result/busdetails");
+    navigate("/result/localbusdetails");
   };
 
   return (
