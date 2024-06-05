@@ -6,6 +6,7 @@ import { FaBus } from "react-icons/fa";
 import { GiCommercialAirplane, GiBus } from "react-icons/gi";
 import { MdOutlineTrain } from "react-icons/md";
 import { RiBusLine } from "react-icons/ri";
+import classNames from "classnames";
 
 const Flight_Result = () => {
   const [result, setresult] = useState([]);
@@ -19,20 +20,21 @@ const Flight_Result = () => {
   }, []);
 
   return (
-    <div className="bg-gray-200">
+    // <div className="bg-gray-200">
+    <div className="body-design">
       {result.length > 0 ? (
         <div className=" bg-neutral-60 h-screen overflow-y-auto ">
           {/* main div */}
-          <div className=" grid sm:grid-cols-5 p-1 bg-yellow-300  ">
+          <div className=" grid sm:grid-cols-5 p-1 bg-white  ">
             {/* div for navigation bar */}
             <div className=" bg-white col-span-3 grid sm:grid-cols-3 border border-neutral-700 ">
               {/* <div className="bg-red-300 flex justify-between gap-1"> */}
               <div className="col-span-1  flex items-center ">
-                <p className="font-bold flex pl-2 text-2xl ">
+                <div className="font-bold flex pl-2 text-2xl ">
                   <p className="mt-1">transit</p>
                   <p className="text-red-500 text-3xl">H</p>
                   <p className="mt-1">ub</p>
-                </p>
+                </div>
               </div>
               <div className=" col-span-2 flex border border-l-neutral-700 justify-between ">
                 <Link to={"/flight"}>
@@ -72,8 +74,8 @@ const Flight_Result = () => {
               Log in/sign up
             </div>
           </div>
-          {/* <div className=" sticky top-0 bg-blue-200 shadow-[0px_5px_10px_-3px_rgba(0,0,0,0.2)] p-1  "> */}
-          <div className=" bg-yellow-300 relative top-0  shadow-[0px_5px_10px_-3px_rgba(0,0,0,0.2)] p-1  ">
+          <div className=" sticky top-0 bg-blue-200 shadow-[0px_5px_10px_-3px_rgba(0,0,0,0.2)] p-1  ">
+            {/* <div className=" bg-white relative top-0  shadow-[0px_5px_10px_-3px_rgba(0,0,0,0.2)] pt-3   "> */}
             {/* div for to give booking details  */}
             <div className=" grid sm:grid-cols-6 gap-[1px] cursor-pointer border border-black  ">
               {/* <div className="col-span-2 grid md:grid-cols-2  gap-[3px] "> */}
@@ -135,13 +137,16 @@ const Flight_Result = () => {
                 </div>
               </div>
               {/* </div> */}
-              <div className="col-span-2 bg-white p-2">
-                <div className=" grid md:grid-cols-2 gap-1 bg-red-200 p-1">
-                  <div className="bg-green-300">
+              <div className="col-span-2 bg-white  ">
+                {/* <div className=" grid md:grid-cols-2 gap-1 bg-red-200 p-1 ju"> */}
+                <div className=" flex justify-center gap-1">
+                  <div className="bg-green-300 pb-4 ">
                     <p className="text-xs">departure</p>
+                    <input type="date" className="pl-12" />
                   </div>
                   <div className="bg-blue-400">
-                    <p className="text-xs">travel class</p>
+                    <p className="text-xs pl-12 ">travel class</p>
+                    <input type="text" />
                   </div>
                 </div>
 
@@ -191,8 +196,10 @@ const Flight_Result = () => {
                 <div className="   fixed z-20 inset-0 top-[12.5rem]  right-auto w-[15.55rem] pb-15  overflow-y-auto no-scrollbar ">
                   {/* <div className=" col-span-1 bg-blue-300 hidden lg:block mt-5 p-6 "> */}
                   {/* <div className="  ml-3 bg-violet-400 p-1 shadow-[0px_2px_5px_0px_rgba(0,0,0,0.10)] "> */}
-                  <div className=" ps-3 ml-3 bg-white p-1 grid sm:grid-cols-1 gap-3  border border-neutral-700 rounded-lg">
-                    <div className=" grid sm:grid-cols-1 gap-4 pt-3 pb-5 border border-black  ">
+                  {/* <div className="ps-3 ml-3 bg-white p-1 grid sm:grid-cols-1 gap-3  border border-neutral-700 rounded-lg"> */}
+                  <div className="ps-3 ml-3 bg-white bg-opacity-75 p-1 grid sm:grid-cols-1 gap-3   rounded-lg">
+                    {/* <div className=" relative shadow-md  grid sm:grid-cols-1 gap-4 pt-3 pb-5 border border-black  "> */}
+                    <div className=" relative   grid sm:grid-cols-1 gap-4 pt-3 pb-5   ">
                       <div className="pt-2 grid sm:grid-cols-2 ">
                         <div className="font-bold  ">stops</div>
                       </div>
@@ -215,11 +222,13 @@ const Flight_Result = () => {
                       </div>
                     </div>
 
-                    <div className=" grid sm:grid-cols-1 gap-3 pt-2 p-5 border border-black ">
+                    {/* <div className=" grid sm:grid-cols-1 gap-3 pt-2 p-5 border border-black "> */}
+                    <div className=" grid sm:grid-cols-1 gap-3 pt-2 p-5  ">
                       <div>flight price</div>
                     </div>
 
-                    <div className="  p-2 pt-4 pb-5 border border-black">
+                    {/* <div className="  p-2 pt-4 pb-5 border border-black"> */}
+                    <div className="  p-2 pt-4 pb-5 ">
                       <div className="mt-2">departure from</div>
                       <div className="flex justify-between mt-7">
                         <div className=" ">
@@ -297,7 +306,8 @@ const Flight_Result = () => {
                     </div>
                     {/* </div> */}
 
-                    <div className="  p-2 pt-3 pb-8 border border-black">
+                    {/* <div className="  p-2 pt-3 pb-8 border border-black"> */}
+                    <div className="  p-2 pt-3 pb-8 ">
                       <p>arrival at </p>
                       <div className="flex justify-between mt-6">
                         <div className=" ">
@@ -380,7 +390,7 @@ const Flight_Result = () => {
 
               {/* </div> */}
 
-              <div className="w-[925]] col-span-3  mt-5  ">
+              <div className="w-[925]] col-span-3  mt-5   ">
                 {/* <div className=""> */}
                 <div className="">
                   {result.map((data) => (
@@ -391,11 +401,27 @@ const Flight_Result = () => {
                     //       hover:ease-out  mb-4 gap-1 p-4"
                     //   key={data._id}
                     // >
+
+                    // <div
+                    //   className=" bg-white grid sm:grid-cols-3 shadow-[0px_2px_5px_0px_rgba(0,0,0,0.10)]
+                    //       cursor-pointer z-10 transition-all duration-100 ease-in
+                    //       hover:scale-[1.01] hover:shadow-600 hover:duration-100
+                    //       hover:ease-out  mb-4 gap-1 p-4 border border-neutral-700 rounded-lg "
+                    //   key={data._id}
+                    // >
+
+                    // <div
+                    //   className=" flight-details grid sm:grid-cols-3 shadow-[0px_2px_5px_0px_rgba(0,0,0,0.10)]
+                    //       cursor-pointer z-10 transition-all duration-100 ease-in
+                    //       hover:scale-[1.01] hover:shadow-600 hover:duration-100
+                    //       hover:ease-out  mb-4 gap-1 p-4  rounded-lg "
+                    //   key={data._id}
+                    // >
                     <div
-                      className=" bg-white grid sm:grid-cols-3 shadow-[0px_2px_5px_0px_rgba(0,0,0,0.10)]  
+                      className="  grid sm:grid-cols-3 shadow-[0px_2px_5px_0px_rgba(0,0,0,0.10)]
                           cursor-pointer z-10 transition-all duration-100 ease-in
                           hover:scale-[1.01] hover:shadow-300 hover:duration-100
-                          hover:ease-out  mb-4 gap-1 p-4 border border-neutral-700 rounded-lg "
+                          hover:ease-out  mb-5 gap-1 p-3 pb-7 pt-7 bg-opacity-75 bg-white rounded-lg "
                       key={data._id}
                     >
                       {/* <div className=" bg-green-300 col-span-2  p-1"> */}
@@ -442,7 +468,22 @@ const Flight_Result = () => {
                                 <p className="body-xs text-secondaryc flex justify-center">
                                   1 hr
                                 </p>
-                                <div>====</div>
+                                <div>
+                                  <svg
+                                    // xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="size-6"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    />
+                                  </svg>
+                                </div>
                               </div>
                             </div>
                           ))}
@@ -487,8 +528,16 @@ const Flight_Result = () => {
                           {/* </div> */}
                         </div>
                         <div className=" col-span-1 p-1 flex items-center relative">
+                          {/* {console.log(data.data.airlineimagecode)} */}
+                          {console.log(data.airlineimagecode)}
                           <motion.button
-                            className=" px-6 py-2 rounded-md  relative radial-gradient"
+                            className={classNames(
+                              " px-6 py-2 rounded-md  relative",
+                              data.airlineimagecode === "6E"
+                                ? "bg-custom-indigo"
+                                : "bg-custom-airindia",
+                              "radial-gradient-indigo"
+                            )}
                             style={{ "--x": "100%", scale: 1 }}
                             animate={{ "--x": "-100%" }}
                             whileTap={{ scale: 1.2 }}
@@ -515,12 +564,50 @@ const Flight_Result = () => {
                           </motion.button>
                         </div>
                       </div>
+
+                      {/* <div className="bg-red-300 p-1"></div>
+                      <div className="bg-red-300 p-1"></div> */}
                     </div>
                   ))}
                 </div>
+
                 {/* </div> */}
               </div>
-              <div className="col-span-1 hidden lg:block bg-white border border-neutral-700 rounded-lg  mt-5"></div>
+              <div className="col-span-1 hidden lg:block bg-white  bg-opacity-75  rounded-lg  mt-5">
+                <div className=" col-span-1 p-1 flex items-center relative">
+                  {console.log()}
+                  <motion.button
+                    className={classNames(
+                      " px-6 py-2 rounded-md  relative",
+                      "bg-custom-indigo",
+                      "radial-gradient-indigo "
+                    )}
+                    style={{ "--x": "100%", scale: 1 }}
+                    animate={{ "--x": "-100%" }}
+                    whileTap={{ scale: 1.2 }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      repeatDelay: 1,
+                      type: "spring",
+                      stiffness: 20,
+                      damping: 15,
+                      mass: 2,
+                      scale: {
+                        type: "spring",
+                        stiffness: 10,
+                        damping: 5,
+                        mass: 0.1,
+                      },
+                    }}
+                  >
+                    <span className="text-neutral-100 tracking-wide font-light h-full w-full block relative linear-mask-indigo ">
+                      book
+                    </span>
+                    <span className=" block absolute inset-0 rounded-md p-px linear-overlay" />
+                  </motion.button>
+                </div>
+              </div>
               {/* </div> */}
             </div>
           </div>
