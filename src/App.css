@@ -37,6 +37,14 @@ body h1 {
   );
 } */
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .radial-gradient {
   background: radial-gradient(
       circle at 50% 0%,
