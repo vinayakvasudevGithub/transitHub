@@ -32,6 +32,12 @@ const Flight_Result = () => {
       .catch((err) => console.log("weather data", err));
   }, []);
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpansion = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <div className="bg-gray-200">
       {result.length > 0 ? (
@@ -128,9 +134,6 @@ const Flight_Result = () => {
                   <p className="text-xs ">travel class</p>
                   <input type="text" className="bg-gray-200 pr-[15px]" />
                 </div>
-                {/* </div> */}
-
-                {/* <div className="bg-red-400">search</div> */}
               </div>
               <div className="col-span-1 pl-1  bg-white flex items-center">
                 <div>
@@ -165,12 +168,12 @@ const Flight_Result = () => {
             </div>
           </div>
 
-          <div className="  p-2 grid sm:grid-cols-12 mt-3">
-            <div className="col-span-3 hidden lg:block ">
-              <div className="ps-3 ml-6 bg-white p-1 grid sm:grid-cols-1 gap-3 rounded-lg   fixed z-20 inset-0 top-[12rem] shadow-2xl right-auto w-[15.55rem] pb-15 overflow-y-auto no-scrollbar ">
+          <div className="   p-2 grid sm:grid-cols-12 mt-3">
+            <div className=" col-span-3 hidden lg:block ">
+              <div className="ps-3 ml-6 bg-white  grid sm:grid-cols-1 gap-3 rounded-lg fixed z-20 inset-0 top-[12rem] shadow-2xl right-auto w-[15.55rem] pb-15 overflow-y-auto no-scrollbar ">
                 <div className=" relative   grid sm:grid-cols-1 gap-4 pt-3 pb-5   ">
                   <div className="pt-2 grid sm:grid-cols-2 ">
-                    <div className="font-bold  ">stops</div>
+                    <div className="font-medium  ">stops</div>
                   </div>
 
                   <div>
@@ -529,34 +532,102 @@ const Flight_Result = () => {
               {/* weather details */}
               {/* </div> */}
             </div>
-            {/* </div> */}
-            <div className="col-span-1 hidden lg:block bg-white    rounded-lg  mt-5">
-              <Weather />
 
-              {dep_weather && (
-                <div key={dep_weather.weather[0].id}>
-                  <p> city : {dep_weather.name}</p>
-                  <div>
-                    {dep_weather.weather.map((data, index) => (
-                      <div key={index}>
-                        <p>weather : {data.main}</p>
-                        <p>condition :{data.description}</p>
-                        <div></div>
-                      </div>
-                    ))}
-                    <div>
-                      <p>
-                        celcius : {Math.round(dep_weather.main.temp - 273.15)}{" "}
-                        degree
-                      </p>
-                    </div>
+            {/* <div
+              className="  flex   fixed z-20 inset-0 
+            top-[12rem]  mr-[.9rem]  left-auto w-[7rem] 
+            "
+            >
+              <div className="  flex items-center  ">
+                <button className=" ml-6 px-1 py-[10rem] absolute bg-red-500 rounded-full text-xs">
+                  weather
+                </button>
+              </div>
+              <div className="bg-white rounded-l-xl px-8 ml-11 shadow-2xl"></div>
+            </div> */}
+            <div className="hidden lg:block">
+              <div
+                onClick={toggleExpansion}
+                className={`bg-white p-2 mr-3  grid sm:grid-cols-1 gap-3 rounded-lg 
+                 w-20 shadow-l cursor-pointer
+                 fixed z-20 inset-0 top-[12.2rem] shadow-2xl left-auto   
+                 overflow-hidden transition-all duration-500
+                  ${isExpanded && "h-[30rem] w-[973px]"} `}
+              >
+                <div className="grid sm:grid-cols-11 ">
+                  <div className="flex items-center">
+                    <div className=" p-[.5px] ml-5  py-[10rem]  bg-gray-400"></div>
+                    <button className=" absolute col-span-1 bg-white border p-2 rounded-full">
+                      {isExpanded ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15.75 19.5 8.25 12l7.5-7.5"
+                          />
+                        </svg>
+                      )}
+                    </button>
                   </div>
-                  <p>visibility : {dep_weather.visibility}</p>
-                  <p>wind speed : {dep_weather.wind.speed}</p>
-                  <p> rain fall : {dep_weather.rain["1h"]}</p>
+                  <div className="col-span-5 pt-9 ">
+                    {isExpanded && <Weather />}
+                  </div>
+                  <div className="col-span-5 pt-9 ">
+                    {isExpanded && <Weather />}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
+          </div>
+
+          <div className="col-span-1 hidden lg:block bg-white   rounded-lg  mt-5">
+            <Weather />
+
+            {dep_weather && (
+              <div key={dep_weather.weather[0].id}>
+                <p> city : {dep_weather.name}</p>
+                <div>
+                  {dep_weather.weather.map((data, index) => (
+                    <div key={index}>
+                      <p>weather : {data.main}</p>
+                      <p>condition :{data.description}</p>
+                      <div></div>
+                    </div>
+                  ))}
+                  <div>
+                    <p>
+                      celcius : {Math.round(dep_weather.main.temp - 273.15)}{" "}
+                      degree
+                    </p>
+                  </div>
+                </div>
+                <p>visibility : {dep_weather.visibility}</p>
+                <p>wind speed : {dep_weather.wind.speed}</p>
+                {/* <p> rain fall : {dep_weather.rain["1h"]}</p> */}
+              </div>
+            )}
           </div>
         </div>
       ) : (
